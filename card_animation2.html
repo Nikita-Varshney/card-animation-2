@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Animation</title>
+</head>
+<style>
+    body{
+        /* background-color: black; */
+    }
+    .card2{
+        margin: 40px auto;
+        width: 150px;
+        height: 200px;
+        position: relative;
+        background-color: rgb(42, 39, 39);
+        border-radius: 20px;
+    }
+    .inner-card{
+        width: inherit;
+        height: inherit;
+        /* background-color: rgb(42, 39, 39) ; */
+        box-shadow: 0 0 10px rgba(11, 11, 11, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+    }
+    .card2_title{
+        position:absolute;
+        left: 30px;
+        bottom: 50px;
+        font-size: 18px;
+        text-shadow: 1px 1px 2px rgba(8, 0, 0, 0.562);
+        z-index: 1;
+        color: azure;
+    }
+    .dot1{
+        position: absolute;
+        z-index: 1;
+        color: azure;
+        text-shadow: 1px 1px 2px rgba(8, 0, 0, 0.562);
+        left: 30px;
+        bottom: 40px;
+        animation: dot-ani 2s ease-in infinite alternate-reverse forwards;
+    }
+    .dot2{
+        position: absolute;
+        z-index: 1;
+        color: azure;
+        text-shadow: 1px 1px 2px rgba(8, 0, 0, 0.562);
+        right: 53px;
+        bottom: 63px;
+        animation: dot2-ani 2s ease-in infinite alternate-reverse forwards;
+    }
+    .circle{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(rgb(146, 227, 40),rgb(38, 190, 61));
+        position: absolute;
+        animation: move-up 1s ease-in infinite alternate-reverse forwards ;
+    }
+    .circle:nth-child(1){
+        top:-25px;
+        left:-25px; 
+    }
+    .circle:nth-child(2){
+        bottom: -25px;
+        right: -25px;
+        animation-name: move-down;
+    }
+    @keyframes dot-ani{
+        0%{
+            left: 30px;
+            bottom: 40px;
+        }
+        25%{
+            left: 50px;
+            bottom: 40px;
+        }
+        35%{
+            left: 60px;
+            bottom: 40px;
+        }
+        55%{
+            left: 70px;
+            bottom: 40px;
+        }
+        75%{
+            left: 80px;
+            bottom: 40px;
+        }
+        100%{
+            left: 90px;
+            bottom: 40px;
+        }
+    }
+    @keyframes dot2-ani{
+        0%{
+            right: 53px;
+            bottom: 63px;
+        }
+        25%{
+            right: 65px;
+            bottom: 63px;
+        }
+        35%{
+            right: 78px;
+            bottom: 63px;
+        }
+        55%{
+            right: 90px;
+            bottom: 63px;
+        }
+        75%{
+            right: 100px;
+            bottom: 63px;
+        }
+        100%{
+            right: 114px;
+            bottom: 63px;
+        }
+    }
+    @keyframes move-up{
+        to{
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes move-down{
+        to{
+            transform: translateY(10px);
+        }
+    }
+</style>
+<body>
+    <article class="card2">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <h3 class="card2_title">Creative</h3>
+        <h1 class="dot1">.</h1>
+        <h1 class="dot2">.</h1>
+        <div class="inner-card"></div>
+    </article>    
+</body>
+</html>
